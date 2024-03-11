@@ -7,7 +7,8 @@ import { UserButton } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import MobileSideBar from "@/components/ui/mobile-sidebar";
 
 const font = Maven_Pro({
   weight: "700",
@@ -18,10 +19,10 @@ function NavBar() {
   return (
     <div
       className="fixed w-full z-50 flex justify-between items-center py-2
-    px-4 border-b border-primary/10 bg-secondary"
+    px-4 border-b border-primary/10 bg-secondary h-16"
     >
       <div className="flex items-center">
-        <Menu className="md:hidden block" />
+        <MobileSideBar />
         <Link href="/">
           <h1
             className={
