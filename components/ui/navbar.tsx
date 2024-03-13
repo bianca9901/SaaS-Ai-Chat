@@ -40,7 +40,7 @@ function NavBar() {
           <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
         </Button>
         <ModeToggle />
-        <UserButton />
+        <UserButton afterSignOutUrl="/"/>
       </div>
     </div>
   );
