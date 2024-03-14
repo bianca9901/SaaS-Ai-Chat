@@ -42,9 +42,9 @@ function ChatMessages({
         content={`Hello, I am ${companion.name}, ${companion.description}`}
       />
 
-      {messages.map((message) => (
+      {messages.map((message, index) => (
         <ChatMessage
-          key={message.content}
+          key={index}
           role={message.role}
           content={message.content}
           src={message.src}
