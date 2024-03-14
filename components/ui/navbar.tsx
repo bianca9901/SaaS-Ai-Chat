@@ -9,13 +9,21 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import MobileSideBar from "@/components/ui/mobile-sidebar";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 const font = Maven_Pro({
   weight: "700",
   subsets: ["latin"],
 });
 
-function NavBar() {
+interface NavBarProps {
+  isPro: boolean;
+}
+
+function NavBar({
+  isPro
+}:NavBarProps) {
+  const proModal = useProModal();
   return (
     <div
       className="fixed w-full z-50 flex justify-between items-center py-2
@@ -35,12 +43,14 @@ function NavBar() {
         </Link>
       </div>
       <div className="flex items-ceter gap-x-3">
-        <Button size="sm" variant="premium">
+        {!isPro && (
+          <Button size="sm" variant="premium" onClick={proModal.onOpen}>
           Upgrade
           <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
         </Button>
+        )} 
         <ModeToggle />
-        <UserButton afterSignOutUrl="/"/>
+        <UserButton afterSignOutUrl="/" />
       </div>
     </div>
   );
