@@ -41,6 +41,7 @@
     "react-hook-form": "^7.51.0",
     "react-spinners": "^0.13.8",
     "replicate": "^0.9.3",
+    "stripe": "^14.20.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
