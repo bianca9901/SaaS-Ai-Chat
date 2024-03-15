@@ -20,6 +20,133 @@ Welcome to your AI Companion Creator! With this application, you can craft your 
 **Monthly Subscription:** Seamlessly handle your subscription payments using Stripe integration.
 
 
+
+## How To Use In Local Development
+
+Follow these steps to get started with the project:
+
+### **1. Clone the Repository**
+
+First, clone the repository to your local machine using the following command:
+
+```
+git clone https://github.com/bianca9901/SaaS-Ai-Chat.git
+
+```
+
+### **2. Install Dependencies**
+
+Navigate into the project directory and install the dependencies using npm or yarn:
+
+```
+cd SAASS-AI-CHAT
+
+```
+
+```
+npm install
+
+```
+
+or
+
+```
+yarn install
+```
+
+### **3. Set up Accounts and get keys for your Environment Variables**
+
+**You will need an account for:**
+
+* [Clerk,](https://clerk.com/)
+* [OpenAI,](https://platform.openai.com/)
+* [Replicate,](https://replicate.com/)
+* [Pinecone,](https://www.pinecone.io/)
+* [Stripe,](https://stripe.com/),
+* [Sql Database,](https://www.elephantsql.com/) Currently using PostgreSQL (ElephantSQL), but planning to migrate to a MySQL database due to unexpected issues with search functionality. (More details in the Bugs section.)
+* [Upstash](https://upstash.com/)
+
+
+**Environment Variables**
+
+Create `.env.local` File In The Root Directory Of Your Project:
+
+```
+cd SAASS-AI-CHAT
+```
+
+```
+touch .env
+```
+
+**Add all your secrets next to these variables:**
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+
+OPENAI_API_KEY=
+REPLICATE_API_TOKEN=
+
+PINECONE_API_KEY=
+PINECONE_ENVIRONMENT=
+PINECONE_INDEX=
+
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+
+DATABASE_URL=
+
+STRIPE_API_KEY=
+STRIPE_WEBHOOK_SECRET=
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+```
+
+
+**Database Configuration and Seeding Setup**
+
+Run these commands to initialise and configure your database, as well as seed it with initial data:
+
+```
+npx prisma db push
+
+```
+
+```
+node scripts/seed.ts
+```
+
+
+### **4. Start the Development Server**
+
+Once the dependencies are installed and environment variables are set up, you can start the development server:
+
+```
+npm run dev
+
+```
+
+or
+
+```
+yarn dev
+
+```
+
+This command will start the development server and your project will be accessible at **`http://localhost:3000`** by default.
+
+### **5. Explore and Enjoy!**
+
+You're all set! explore the project, interact with its features, and enjoy using it. If you encounter any issues or have feedback, feel free to open an issue on GitHub.
+
 ## Technologies Used
 
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript. [Learn more](https://www.typescriptlang.org/)
@@ -60,3 +187,8 @@ Welcome to your AI Companion Creator! With this application, you can craft your 
 - **Next Themes:** A plugin for adding theme support to Next.js applications. [Learn more](https://www.npmjs.com/package/next-themes)
 - **Hookform/resolvers**: A form validation tool. [Learn more](https://www.npmjs.com/package/@hookform/resolvers)
 - **React-spinners:** A collection of loading spinners for React.js. [Learn more](https://www.npmjs.com/package/react-spinners)
+
+## Bugs
+Upon utilising @@fulltext([name]) inside schema.prisma, an error occurred with the message: "Error parsing attribute "@@fulltext": Defining fulltext indexes is not supported with the current connector. Prisma". After doing some research, it became apparent that Prisma Client does not currently facilitate the utilisation of indexes to enhance full-text search on PostgreSQL. The recommended solution is to transition to MySQL and adjust the provider accordingly.
+
+Although the project is currently operational with PostgreSQL, it's encountering limitations when it comes to searching for companions. Therefore, transitioning to MySQL is advisable to address this issue effectively.
