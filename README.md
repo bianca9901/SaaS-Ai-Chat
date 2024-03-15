@@ -1,3 +1,25 @@
+# Chat AI
+
+## About
+
+Welcome to your AI Companion Creator! With this application, you can craft your very own personalised AI chatbot. Whether you want to recreate a renowned figure, simulate a cherished friend, or even replicate a beloved family member, the possibilities are endless. Simply provide your AI with instructions on how to interact and behave, and watch as your creation comes to life for engaging conversations and good banter.
+
+
+## Features
+
+**Instant Real-Time Functionality:** Engage in chats with your AI companions and receive immediate responses.
+
+**User Authentication:** Robust authentication powered by Clerk to ensure your accounts are safe.
+
+**Comprehensive System:** Complete full CRUD (create, read, update, delete) functionalities to manage your AI companions effortlessly.
+
+**Responsive User Interface:** Enjoy consistent and visually appealing experiences across diverse devices.
+
+**Route Protection:** Robust mechanisms to protect sensitive areas of the application, ensuring data security.
+
+**Monthly Subscription:** Seamlessly handle your subscription payments using Stripe integration.
+
+
 ## Technologies Used
 
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript. [Learn more](https://www.typescriptlang.org/)
