@@ -1,9 +1,10 @@
 # Chat AI
 
+https://github.com/bianca9901/SaaS-Ai-Chat/assets/134193140/cd9d118c-3f40-4704-bc79-1ea19d27890f
+
 ## About
 
 Welcome to your AI Companion Creator! With this application, you can craft your very own personalised AI chatbot. Whether you want to recreate a renowned figure, simulate a cherished friend, or even replicate a beloved family member, the possibilities are endless. Simply provide your AI with instructions on how to interact and behave, and watch as your creation comes to life for engaging conversations and good banter.
-
 
 ## Features
 
